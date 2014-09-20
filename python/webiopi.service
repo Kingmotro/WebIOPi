@@ -1,0 +1,17 @@
+[Unit]
+Description=webiopi Server
+After=syslog.target
+After=network.target
+
+[Service]
+
+Type=forking
+Restart=always
+WorkingDirectory=/usr/lib/webiopi/python
+PIDFile=/var/run/webiopi.pid
+ExecStart=/usr/bin/python -m webiopi $
+
+#ExecStop=/opt/proserver/bin/proserver stop
+
+[Install]
+WantedBy=multi-user.target
