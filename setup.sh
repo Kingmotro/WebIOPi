@@ -98,9 +98,8 @@ fi
 # Add service/daemon script
 #if [ ! -f "/etc/init.d/webiopi" ]; then
 echo "Installing startup script..."
-cp -rf python/webiopi.init.sh /etc/init.d/webiopi
-sed -i "s/python/$python/g" /etc/init.d/webiopi
-chmod 0755 /etc/init.d/webiopi
+cp -rf python/webiopi.service /etc/systemd/system/webiopi.service 
+chmod 0755 /etc/systemd/system/webiopi.service
 
 # Add webiopi command
 echo "Installing webiopi command..."

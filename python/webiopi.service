@@ -7,9 +7,10 @@ After=network.target
 
 Type=forking
 Restart=always
-WorkingDirectory=/usr/lib/webiopi/python
 PIDFile=/var/run/webiopi.pid
-ExecStart=/usr/bin/python -m webiopi $
+ExecStart=/usr/bin/webiopi
+#ExecStart=python3 -m webiopi $*
+
 
 #ExecStop=/opt/proserver/bin/proserver stop
 

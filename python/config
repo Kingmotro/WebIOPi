@@ -68,18 +68,18 @@ multicast = true
 # Raspberry native UART on GPIO, uncomment to enable
 # Don't forget to remove console on ttyAMA0 in /boot/cmdline.txt
 # And also disable getty on ttyAMA0 in /etc/inittab
-#serial0 = Serial device:ttyAMA0 baudrate:9600
+serial0 = Serial device:ttyAMA0 baudrate:9600
 
 # USB serial adapters
-#usb0 = Serial device:ttyUSB0 baudrate:9600
-#usb1 = Serial device:ttyACM0 baudrate:9600
+usb0 = Serial device:ttyUSB0 baudrate:9600
+usb1 = Serial device:ttyACM0 baudrate:9600
 
 #temp0 = TMP102
 #temp1 = TMP102 slave:0x49
 #temp2 = DS18B20
 #temp3 = DS18B20 slave:28-0000049bc218
 
-#bmp = BMP085
+bmp = BMP085
 
 #gpio0 = PCF8574
 #gpio1 = PCF8574 slave:0x21
@@ -136,5 +136,5 @@ multicast = true
 #/livingroom/brightness = /devices/adc/0/float
 #/livingroom/temperature = /devices/temp0/temperature/c
 
-#/weather/temperature = /devices/bmp/temperature/c
-#/weather/pressure = /devices/bmp/pressure/hpa
+/weather/temperature = /devices/bmp/temperature/c
+/weather/pressure = /devices/bmp/pressure/hpa
