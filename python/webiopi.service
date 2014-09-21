@@ -8,7 +8,7 @@ After=network.target
 Type=forking
 Restart=always
 PIDFile=/var/run/webiopi.pid
-ExecStart=/usr/bin/webiopi
+ExecStart=/usr/bin/webiopi -c /etc/webiopi/config
 #ExecStart=python3 -m webiopi $*
 
 
