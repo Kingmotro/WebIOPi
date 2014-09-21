@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>WebIOPi | Dump1090</title>
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript">
+        webiopi().ready(init);
+        
+        // defines function passed previously to webiopi().ready()
+        function init() {
+                // automatically refresh UI each seconds
+                setInterval(updateUI, 1000);
+        }
+
+        // function called through setInterval
+        function updateUI() {
+                // call getSensor macro for Arduino analog channel 0-3
+                webiopi().callMacro("getdump1090", "",  dump1090Callback);
+        }       
+
+        // callback function used to display sensor data
+        function dump1090Callback(macroName, args,  data) {
+                // use jQuery to change spans content
+                $("sensor").text(data);
+        }
+
+    </script>
+</head>
+<body>
+    <div align="center">
+        <div> <span id="sensor"></span></div>
+    </div>
+</body>
+</html>
+
